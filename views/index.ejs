@@ -9,21 +9,25 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Tasks</h1>
-        <a href="/add" class="btn btn-success">New Tasks</a>
+        <a href="/tasks/add" class="btn btn-success">New Tasks</a>
         
+        <% tasks.forEach(task => { %>
         
             <div class="card mt-4">
                 <div class="card-body">
-                    <h4 class="card-tit"></h4>
+                    <h4 class="card-tit"><%= task.title %></h4>
                     <div class="card-subtitle text-muted mb-2">
+                        <%= task.createdAt %>
                     </div>
-                    <div class="card-text mb-2"></div>
-                    <a href="edit/?_method=PUT" class="btn btn-Success">Edit</a>
-                    <form action="/articles/?_method=DELETE"  class="d-inline" method="post">
+                    <div class="card-text mb-2"><%= task.description %></div>
+                    <a href="/tasks/edit/<%= task._id %>" class="btn btn-Success">Edit</a>
+                    <form action="/tasks/delete/<%= task._id %>?_method=DELETE"  class="d-inline" method="post">
                         <button type="submit" class="btn btn-primary">Delete</button>
                     </form>
                 </div>
             </div>
+        <%})%>
+            
 
     </div>
 </body>
