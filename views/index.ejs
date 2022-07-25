@@ -1,0 +1,30 @@
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="https://bootswatch.com/5/quartz/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Tasks</h1>
+        <a href="/add" class="btn btn-success">New Tasks</a>
+        
+        
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h4 class="card-tit"></h4>
+                    <div class="card-subtitle text-muted mb-2">
+                    </div>
+                    <div class="card-text mb-2"></div>
+                    <a href="edit/?_method=PUT" class="btn btn-Success">Edit</a>
+                    <form action="/articles/?_method=DELETE"  class="d-inline" method="post">
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                    </form>
+                </div>
+            </div>
+
+    </div>
+</body>
+</html>
